@@ -3,23 +3,18 @@ name = "jellyfin-api-client"
 version = "10.11.0"
 description = "A client library for accessing Jellyfin API"
 authors = [
-    {name = "Geoffrey Coulaud", email = "geoffrey.coulaud@gmail.com"},
-    {name = "Paul Hutchings", email = "dev@studiop.page"},
+  { name = "Geoffrey Coulaud", email = "geoffrey.coulaud@gmail.com" },
+  { name = "Paul Hutchings", email = "dev@studiop.page" },
 ]
-license = {text = "MIT"}
+license = { text = "MIT" }
 requires-python = "<4.0,>=3.10"
 dependencies = [
-    "httpx>=0.28.1",
-    "attrs>=25.3.0",
-    "python-dateutil>=2.9.0.post0"
-
+  "httpx>=0.28.1",
+  "attrs>=25.3.0",
+  "python-dateutil>=2.9.0.post0",
 ]
 readme = "README.md"
-keywords = [
-    "jellyfin",
-    "api",
-    "openapi",
-]
+keywords = ["jellyfin", "api", "openapi"]
 
 [project.urls]
 repository = "https://github.com/studioph/jellyfin-api-client"
@@ -67,8 +62,8 @@ excludes = ["**/.ruff_cache/"]
 
 [dependency-groups]
 dev = [
-    "pylint>=3.3.7",
-    "black>=25.1.0",
-    "isort>=6.0.1",
-    "openapi-python-client>=0.25.3",
+  "pylint>=3.3.7",
+  "black>=25.1.0",
+  "isort>=6.0.1",
+  "openapi-python-client>=0.25.3",
 ]
