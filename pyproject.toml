@@ -25,6 +25,22 @@ keywords = [
 repository = "https://github.com/studioph/jellyfin-api-client"
 
 
+[tool.pdm.scripts]
+gen = { cmd = [
+  "openapi-python-client",
+  "generate",
+  "--meta",
+  "none",
+  "--path",
+  "specs/jellyfin-openapi-stable.json",
+  "--config",
+  "openapi-config.yaml",
+  "--output-path",
+  "src/jellyfin",
+  "--overwrite"
+] }
+
+
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
@@ -47,11 +63,7 @@ line_length = 120
 profile = "black"
 
 [tool.pdm.build]
-includes = [
-    "jellyfin_api_client",
-    "CHANGELOG.md",
-    "jellyfin_api_client/py.typed",
-]
+excludes = ["**/.ruff_cache/"]
 
 [dependency-groups]
 dev = [
