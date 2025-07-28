@@ -1,32 +1,37 @@
-[tool.poetry]
+[project]
 name = "jellyfin-api-client"
-version = "11.0.0"
+version = "10.10.7"
 description = "A client library for accessing Jellyfin API"
 authors = [
-  "Geoffrey Coulaud <geoffrey.coulaud@gmail.com>"
+    {name = "Geoffrey Coulaud", email = "geoffrey.coulaud@gmail.com"},
+    {name = "Paul Hutchings", email = "dev@studiop.page"},
+]
+license = {text = "MIT"}
+requires-python = "<4.0,>=3.10"
+dependencies = [
+    "httpx>=0.28.1",
+    "attrs>=25.3.0",
+    "python-dateutil>=2.9.0.post0"
+
 ]
 readme = "README.md"
-license = "MIT"
-repository = "https://github.com/GeoffreyCoulaud/jellyfin-api-client"
-keywords = ["jellyfin", "api", "openapi"]
-packages = [
-    {include = "jellyfin_api_client"},
+keywords = [
+    "jellyfin",
+    "api",
+    "openapi",
 ]
-include = ["CHANGELOG.md", "jellyfin_api_client/py.typed"]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-httpx = ">=0.20.0,<0.25.0"
-attrs = ">=21.3.0"
-python-dateutil = "^2.8.0"
+[project.urls]
+repository = "https://github.com/studioph/jellyfin-api-client"
+
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [tool.black]
 line-length = 120
-target_version = ['py38', 'py39', 'py310', 'py311']
+target-version = ['py310', 'py311', 'py312', 'py313']
 exclude = '''
 (
   /(
@@ -40,3 +45,17 @@ exclude = '''
 [tool.isort]
 line_length = 120
 profile = "black"
+
+[tool.pdm.build]
+includes = [
+    "jellyfin_api_client",
+    "CHANGELOG.md",
+    "jellyfin_api_client/py.typed",
+]
+
+[dependency-groups]
+dev = [
+    "pylint>=3.3.7",
+    "black>=25.1.0",
+    "isort>=6.0.1",
+]
