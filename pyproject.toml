@@ -1,6 +1,6 @@
 [project]
 name = "jellyfin-api-client"
-version = "10.10.7"
+version = "10.11.0"
 description = "A client library for accessing Jellyfin API"
 authors = [
     {name = "Geoffrey Coulaud", email = "geoffrey.coulaud@gmail.com"},
